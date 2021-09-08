@@ -11,6 +11,11 @@ scraper = cloudscraper.create_scraper()
 print('Started!')
 save_folder = 'media'
 
+try:
+    os.stat(save_folder)
+except:
+    os.mkdir(save_folder)
+
 def get_link():
     letters = string.ascii_letters
 
@@ -28,10 +33,14 @@ while True:
     url = img.get('src')
     print('Image acquired!')
     print(url)
-    data = scraper.get(url)
-    with open(os.path.join(save_folder, os.path.basename(url)), 'wb') as f:
-        #image = open(f'{save_folder}/{url[22:-4]}.png', 'wb')
-        #image.write(data.content)
-        #image.close()
-        f.write(data.content)
+    try:
+        data = scraper.get(url)
+        with open(os.path.join(save_folder, os.path.basename(url)), 'wb') as f:
+            #image = open(f'{save_folder}/{url[22:-4]}.png', 'wb')
+            #image.write(data.content)
+            #image.close()
+            f.write(data.content)
+    except:
+        print("Image is invalid or removed, skipping")
+        
     #print('Image saved!')
