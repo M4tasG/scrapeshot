@@ -4,7 +4,6 @@ import cloudscraper
 import random
 import string
 import os
-from urllib.request import urlopen
 from func import get_link
 
 scraper = cloudscraper.create_scraper()
