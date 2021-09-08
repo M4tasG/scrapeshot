@@ -10,3 +10,6 @@
 
 - Find out why some images that are saved are showing as unsupported or corrupted
 - Edge-Cases (currently only one that is being handled if a picture has been removed)
+
+- Possibly included image recognition to categorize the scraped images
+    - Detect documents, chats, game screenshots etc. (very big ?)
