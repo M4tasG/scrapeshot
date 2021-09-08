@@ -8,3 +8,5 @@
     - Ordered links (https://prnt.sc/[a-z-0-9][a-z-0-9][etc.])
     - Amount of links (Random 100, Random 10000, Ordered 10)
 
+- Find out why some images that are saved are showing as unsupported or corrupted
+- Edge-Cases (currently only one that is being handled if a picture has been removed)
