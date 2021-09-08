@@ -5,6 +5,7 @@ import random
 import string
 import os
 from urllib.request import urlopen
+from func import get_link
 
 scraper = cloudscraper.create_scraper()
 
@@ -16,13 +17,6 @@ try:
 except:
     os.mkdir(save_folder)
 
-def get_link():
-    letters = string.ascii_letters
-
-    let_1 = random.choice(letters).lower()
-    let_2 = random.choice(letters).lower()
-    num = random.randint(1000, 9999)
-    return f'https://prnt.sc/{let_1}{let_2}{num}'
 while True:
     url = get_link()
     print(f'URL Generated: {url}')

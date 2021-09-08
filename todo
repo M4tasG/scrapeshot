@@ -1,0 +1,10 @@
+- Save the links that were already scraped
+    - CSV file
+    - JSON file
+    - Shared DB for multiple scrapers?
+
+- Options to scrape
+    - Random links
+    - Ordered links (https://prnt.sc/[a-z-0-9][a-z-0-9][etc.])
+    - Amount of links (Random 100, Random 10000, Ordered 10)
+
