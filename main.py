@@ -27,20 +27,14 @@ while True:
     url = get_link()
     print(f'URL Generated: {url}')
     soup = BeautifulSoup(scraper.get(url).content, 'html.parser')
-    #print(soup)
     img = soup.find('img', id='screenshot-image')
-    print('Image found!')
     url = img.get('src')
-    print('Image acquired!')
-    print(url)
+    print(f'Image url: {url}')
     try:
         data = scraper.get(url)
         with open(os.path.join(save_folder, os.path.basename(url)), 'wb') as f:
-            #image = open(f'{save_folder}/{url[22:-4]}.png', 'wb')
-            #image.write(data.content)
-            #image.close()
             f.write(data.content)
+            print("Image saved! Moving on...")
     except:
         print("Image is invalid or removed, skipping")
         
-    #print('Image saved!')
