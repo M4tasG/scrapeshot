@@ -7,6 +7,8 @@ name = "pypi"
 requests = "*"
 beautifulsoup4 = "*"
 cloudscraper = "*"
+numpy = "*"
+opencv-contrib-python = "*"
 
 [dev-packages]
 
