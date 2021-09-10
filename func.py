@@ -13,9 +13,13 @@ def get_link():
     num = random.randint(1000, 9999)
     return f'https://prnt.sc/{let_1}{let_2}{num}'
 
-def save_image(save_folder, url, img):
+def save_image(save_folder, url, img_url, img):
     with open(os.path.join(save_folder, os.path.basename(url)), 'wb') as f:
         f.write(img.content)
+        csv_file = open('urls.csv', 'a')
+        writer = csv.writer(csv_file)
+        writer.writerow([url, img_url])
+        csv_file.close()
 
 
 #Unused for now, filtering no image found by imgur links
