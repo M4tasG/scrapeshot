@@ -8,10 +8,15 @@
     - Ordered links (https://prnt.sc/[a-z-0-9][a-z-0-9][etc.])
     - Amount of links (Random 100, Random 10000, Ordered 10)
 
-- Find out why some images that are saved are showing as unsupported or corrupted
++ Find out why some images that are saved are showing as unsupported or corrupted
+    - Images that are showing up like that are coming from imgur, and are the default imgur image not found images
+    for some reason some of them save properly while others do not, but for now all recorded cases are 100% imgur
+    links. Until a better solution is impletemented, imgur links are being filtered out completely.
 - Edge-Cases (currently only one that is being handled if a picture has been removed)
 - Threading
 
 - Possibly included image recognition to categorize the scraped images
     - Detect documents, chats, game screenshots etc. (very big ?)
-    - Filter out no longer available images
+    + Filter out no longer available images
+        + Template matching function works with the images that come from imgur which are no longer available, but due to
+        filtering out imgur images completely, template matching is unnecessary for now.
