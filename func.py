@@ -29,3 +29,14 @@ def match_with_template(template, img):
     result = cv2.matchTemplate(img, template, cv2.TM_CCOEFF_NORMED)
     min_val, max_val, min_loc, max_loc = cv2.minMaxLoc(result)
     return max_val
+
+def check_csv():
+    try:
+        open('urls.csv', 'r')
+    except:
+        with open('urls.csv', 'w') as f:
+            header = ['URL', 'Image link']
+            writer = csv.writer(f)
+            writer.writerow(header)
+            f.close()
+

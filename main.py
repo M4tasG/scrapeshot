@@ -1,12 +1,13 @@
 from bs4 import BeautifulSoup
 import cloudscraper
 import os
-from func import get_link, save_image
+from func import check_csv, get_link, save_image, check_csv
 
 scraper = cloudscraper.create_scraper()
 #no_image_template = cv2.imread('non_existent_img.jpg', cv2.IMREAD_UNCHANGED)
 
 print('Started!')
+check_csv()
 save_folder = 'media'
 
 try:
