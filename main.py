@@ -1,13 +1,7 @@
-import requests
 from bs4 import BeautifulSoup
 import cloudscraper
-import random
-import string
 import os
 from func import get_link, save_image
-import cv2
-import numpy
-import time
 
 scraper = cloudscraper.create_scraper()
 #no_image_template = cv2.imread('non_existent_img.jpg', cv2.IMREAD_UNCHANGED)
