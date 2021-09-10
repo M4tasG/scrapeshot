@@ -20,12 +20,14 @@ while True:
     print(f'URL Generated: {url}')
     soup = BeautifulSoup(scraper.get(url).content, 'html.parser')
     img = soup.find('img', id='screenshot-image')
-    url = img.get('src')
-    print(f'Image url: {url}')  
+    img_url = img.get('src')
+    print(f'Image url: {img_url}')  
     try:
-        data = scraper.get(url)
-        if 'imgur' not in url:
-            save_image(save_folder, url, data)
+        data = scraper.get(img_url)
+        if 'imgur' not in img_url:
+            print("Not an imgur link, saving image")
+            save_image(save_folder, url, img_url, data)
+            print("Image saved")
             print(os.path.join(save_folder, os.path.basename(url)))
         else:
             print("Imgur link, most likely a removed image, skipping")
