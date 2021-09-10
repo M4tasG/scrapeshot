@@ -32,7 +32,8 @@ def match_with_template(template, img):
 
 def check_csv():
     try:
-        open('urls.csv', 'r')
+        file = open('urls.csv', 'r')
+        file.close()
     except:
         with open('urls.csv', 'w') as f:
             header = ['URL', 'Image link']
