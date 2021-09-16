@@ -1,5 +1,7 @@
 - Save the links that were already scraped
-    - CSV file?
+    + CSV file
+        + Links scraped are saved to a CSV file
+        - Checking generated links against the CSV file to filter out duplicates
     - JSON file?
     - Shared DB for multiple scrapers?
 
