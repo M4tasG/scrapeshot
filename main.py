@@ -27,8 +27,6 @@ while True:
         if 'imgur' not in img_url:
             print("Not an imgur link, saving image")
             save_image(save_folder, url, img_url, data)
-            print("Image saved")
-            print(os.path.join(save_folder, os.path.basename(url)))
         else:
             print("Imgur link, most likely a removed image, skipping")
     except:
