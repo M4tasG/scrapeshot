@@ -14,12 +14,17 @@ def get_link():
     return f'https://prnt.sc/{let_1}{let_2}{num}'
 
 def save_image(save_folder, url, img_url, img):
-    with open(os.path.join(save_folder, os.path.basename(url)), 'wb') as f:
-        f.write(img.content)
-        csv_file = open('urls.csv', 'a')
-        writer = csv.writer(csv_file)
-        writer.writerow([url, img_url])
-        csv_file.close()
+    #print(check_url(url))
+    if check_url(url):
+        print('DUPLICATE FOUND')
+    else:
+        with open(os.path.join(save_folder, os.path.basename(url)), 'wb') as f:
+            f.write(img.content)
+            csv_file = open('urls.csv', 'a', newline='')
+            writer = csv.writer(csv_file)
+            writer.writerow([url, img_url])
+            csv_file.close()
+            print('Image saved')
 
 
 #Unused for now, filtering no image found by imgur links
@@ -45,3 +50,12 @@ def check_csv():
             writer.writerow(header)
             f.close()
 
+def check_url(url):
+    csv_file = csv.reader(open('urls.csv', 'r'))
+    check = False
+    a = len(list(csv_file))
+    for row in csv_file:
+        if url == row[0]:
+            check = True
+            break
+    return check
